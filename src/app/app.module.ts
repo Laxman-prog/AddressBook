@@ -4,6 +4,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ReactiveFormsModule } from '@angular/forms';
 
 //Angular Material
 import {MatButtonModule} from '@angular/material/button';
@@ -13,13 +14,21 @@ import { ContactsComponent } from './contacts/contacts.component';
 import { NewcontactComponent } from './newcontact/newcontact.component';
 import {MatIconModule} from '@angular/material/icon';
 import {MatSidenavModule} from '@angular/material/sidenav';
+import {MatTableModule} from '@angular/material/table';
+import {MatCardModule} from '@angular/material/card';
+import {MatInputModule} from '@angular/material/input';
+import {MatDialogModule} from '@angular/material/dialog';
+import { UpdateDialogComponent } from './dialogs/update-dialog/update-dialog.component';
+import { DeleteDialogComponent } from './dialogs/delete-dialog/delete-dialog.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     ContactsComponent,
-    NewcontactComponent
+    NewcontactComponent,
+    UpdateDialogComponent,
+    DeleteDialogComponent
   ],
   imports: [
     BrowserModule,
@@ -28,7 +37,12 @@ import {MatSidenavModule} from '@angular/material/sidenav';
     MatButtonModule,
     MatToolbarModule,
     MatIconModule,
-    MatSidenavModule
+    MatSidenavModule,
+    MatTableModule,
+    MatCardModule,
+    ReactiveFormsModule,
+    MatInputModule,
+    MatDialogModule
   ],
   providers: [],
   bootstrap: [AppComponent]
