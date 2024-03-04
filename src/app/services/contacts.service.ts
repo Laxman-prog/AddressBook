@@ -19,7 +19,7 @@ export class ContactsService {
     return this.contacts;
   }
 
-  updateContacts(newcontact: Contact) {
+  createContacts(newcontact: Contact) {
 
     let heighestId = 0;
     this.contacts.forEach(contactObj => {
@@ -37,5 +37,18 @@ export class ContactsService {
         Address: newcontact.Address
       }
       );
+  }
+
+  updateContact(updateContact: Contact) {
+    const index = this.contacts.findIndex(contact => contact.Id == updateContact.Id);
+    this.contacts[index].FirstName = updateContact.FirstName;
+    this.contacts[index].LastName = updateContact.LastName;
+    this.contacts[index].PhoneNumber = updateContact.PhoneNumber;
+    this.contacts[index].Address = updateContact.Address;
+  }
+
+  deleteContact(id: number) {
+    const index = this.contacts.findIndex(contact => contact.Id == id);
+    this.contacts.splice(index, 1);
   }
 }
