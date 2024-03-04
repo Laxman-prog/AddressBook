@@ -31,7 +31,7 @@ export class NewcontactComponent {
       Address: this.contactForm.controls['address'].value as string
     }
 
-    this.contactsService.updateContacts(this.newContact);
+    this.contactsService.createContacts(this.newContact);
     console.log(this.contactsService.getContacts());
     this.route.navigate(['/contacts']);
   }
